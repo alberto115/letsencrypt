@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  certs:
+    image: adferrand/letsencrypt-dns
+    env_file: .env
+    volumes:
+      - ./.ssl/letsencrypt:/etc/letsencrypt
+      - ./domains.conf:/etc/letsencrypt/domains.conf
